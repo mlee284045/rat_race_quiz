@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+        </nav>
+    </header>
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <footer>
+        <hr>
+        <p>Creation and Copyright by Michael Lee 2014</p>
+    </footer>
+</body>
+</html>
