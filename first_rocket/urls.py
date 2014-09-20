@@ -5,7 +5,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'rat_race.views.home', name='home'),
     url(r'^register/$', 'rat_race.views.register', name='register'),
-
+    url(r'^profile/$', 'rat_race.views.profile', name='profile'),
+    url(r'^accounts/profile/$', 'rat_race.views.profile'),
 
 
 

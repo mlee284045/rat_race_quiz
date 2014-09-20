@@ -1,0 +1,12 @@
+.container {
+    border-radius: 10%;
+}
+
+
+#map {
+    margin-top: 5%;
+    margin-left: 7.5%;
+    height: 350px;
+    width: 85%;
+}
+

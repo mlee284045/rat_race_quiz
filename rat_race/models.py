@@ -3,8 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Runner(User):
-    location_lat = models.DecimalField(max_digits=6, decimal_places=2, null=True)
-    location_long = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    location_lat = models.DecimalField(max_digits=6, decimal_places=2, null=True, default=36.10)
+    location_long = models.DecimalField(max_digits=6, decimal_places=2, null=True, default=-115.18)
 
 
 

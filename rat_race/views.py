@@ -13,12 +13,7 @@ def register(request):
     if request.method == 'POST':
         form = RunnerForm(request.POST)
         if form.is_valid():
-            runner = Runner.objects.create(
-                username=form.cleaned_data['username'],
-                first_name=form.cleaned_data['first_name'],
-                last_name=form.cleaned_data['last_name'],
-                email=form.cleaned_data['email'],
-            )
+            runner = form.save()
             runner.email_user('Welcome to the Rat Race', 'Thanks for joining. Will you be able to last till the end? We shall see...', settings.DEFAULT_FROM_EMAIL)
 
             return redirect('home')
@@ -26,4 +21,10 @@ def register(request):
         form = RunnerForm()
     return render(request, 'registration/register.html', {'form': form})
 
+
+def profile(request):
+    runner = Runner.objects.get(id=request.user.id)
+    data = {'long': runner.location_long, 'lat': runner.location_lat}
+    # data = {'user': request.user}
+    return render(request, 'profile.html', data)
 
