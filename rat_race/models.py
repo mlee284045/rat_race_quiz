@@ -3,8 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Runner(User):
-    location_lat = models.DecimalField(max_digits=6, decimal_places=2)
-    location_long = models.DecimalField(max_digits=6, decimal_places=2)
+    location_lat = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    location_long = models.DecimalField(max_digits=6, decimal_places=2, null=True)
 
 
 
@@ -26,3 +26,4 @@ class Topic(models.Model):
 class Quiz(models.Model):
     name = models.CharField(max_length=60)
     topics = models.ForeignKey(Topic, related_name='quiz')
+    runners = models.ForeignKey(Runner, related_name='quiz')
